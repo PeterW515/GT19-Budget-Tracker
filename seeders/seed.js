@@ -2,132 +2,62 @@ const mongoose = require('mongoose');
 const db = require('../models');
 
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workout', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/budget', {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true,
 });
 
-const workoutSeed = [
+const budgetSeed = [
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 9)),
-    exercises: [
-      {
-        type: 'resistance',
-        name: 'Bicep Curl',
-        duration: 20,
-        weight: 100,
-        reps: 10,
-        sets: 4,
-      },
-    ],
+    name: 'Paycheck',
+    value: 2500,
+    date: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 8)),
-    exercises: [
-      {
-        type: 'resistance',
-        name: 'Lateral Pull',
-        duration: 20,
-        weight: 300,
-        reps: 10,
-        sets: 4,
-      },
-    ],
+    name: 'Gas',
+    value: -100,
+    date: new Date(new Date().setDate(new Date().getDate() - 8)),
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 7)),
-    exercises: [
-      {
-        type: 'resistance',
-        name: 'Push Press',
-        duration: 25,
-        weight: 185,
-        reps: 8,
-        sets: 4,
-      },
-    ],
+    name: 'Groceries',
+    value: -200,
+    date: new Date(new Date().setDate(new Date().getDate() - 7)),
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 6)),
-    exercises: [
-      {
-        type: 'cardio',
-        name: 'Running',
-        duration: 25,
-        distance: 4,
-      },
-    ],
+    name: 'Restaurant',
+    value: -75,
+    date: new Date(new Date().setDate(new Date().getDate() - 6)),
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 5)),
-    exercises: [
-      {
-        type: 'resistance',
-        name: 'Bench Press',
-        duration: 20,
-        weight: 285,
-        reps: 10,
-        sets: 4,
-      },
-    ],
+    name: 'Coffee',
+    value: -3,
+    date: new Date(new Date().setDate(new Date().getDate() - 5)),
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 4)),
-    exercises: [
-      {
-        type: 'resistance',
-        name: 'Bench Press',
-        duration: 20,
-        weight: 300,
-        reps: 10,
-        sets: 4,
-      },
-    ],
+    name: 'Subscriptions',
+    value: -20,
+    date: new Date(new Date().setDate(new Date().getDate() - 4)),
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 3)),
-    exercises: [
-      {
-        type: 'resistance',
-        name: 'Quad Press',
-        duration: 30,
-        weight: 300,
-        reps: 10,
-        sets: 4,
-      },
-    ],
+    name: 'Gym Membership',
+    value: -30,
+    date: new Date(new Date().setDate(new Date().getDate() - 3)),
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 2)),
-    exercises: [
-      {
-        type: 'resistance',
-        name: 'Bench Press',
-        duration: 20,
-        weight: 300,
-        reps: 10,
-        sets: 4,
-      },
-    ],
+    name: 'Paycheck',
+    value: 2500,
+    date: new Date(new Date().setDate(new Date().getDate() - 2)),
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 1)),
-    exercises: [
-      {
-        type: 'resistance',
-        name: 'Military Press',
-        duration: 20,
-        weight: 300,
-        reps: 10,
-        sets: 4,
-      },
-    ],
-  },
+    name: 'Car Payment',
+    value: -200,
+    date: new Date(new Date().setDate(new Date().getDate() - 1)),
+  }
 ];
 
-db.Workout.deleteMany({})
-  .then(() => db.Workout.collection.insertMany(workoutSeed))
+db.Transaction.deleteMany({})
+  .then(() => db.Transaction.collection.insertMany(budgetSeed))
   .then((data) => {
     console.log(data.result.n + ' records inserted!');
     process.exit(0);
