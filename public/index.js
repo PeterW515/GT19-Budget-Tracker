@@ -111,6 +111,11 @@ function sendTransaction(isAdding) {
   populateChart();
   populateTable();
   populateTotal();
+
+  //function to save record if post fails
+  function saveRecord(transaction) {
+    
+  };
   
   // also send to server
   fetch("/api/transaction", {
