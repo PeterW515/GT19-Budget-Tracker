@@ -45,13 +45,13 @@ const budgetSeed = [
     date: new Date(new Date().setDate(new Date().getDate() - 3)),
   },
   {
-    name: 'Paycheck',
-    value: 2500,
+    name: 'Car Payment',
+    value: -200,
     date: new Date(new Date().setDate(new Date().getDate() - 2)),
   },
   {
-    name: 'Car Payment',
-    value: -200,
+    name: 'Birthday Gift',
+    value: 200,
     date: new Date(new Date().setDate(new Date().getDate() - 1)),
   }
 ];
