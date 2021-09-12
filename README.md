@@ -3,6 +3,13 @@
   [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
   This Node app uses a MongoDB database to keep track of the user's financial transactions. What makes this application especially useful is that it uses features of a Progressive Web App to give access even while offline. Transactions entered without an internet connection are saved locally and when connection is re-established, the transactions are bulk uploaded to the database.
+  
+  ![image](https://user-images.githubusercontent.com/78565748/132967299-087b9aa4-1e5a-4298-9e33-b6f3466a26a2.png)
+
+
+The app is deployed at: https://gt19-budget-tracker.herokuapp.com/
+
+
 
   ---
 
